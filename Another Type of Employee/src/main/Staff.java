@@ -30,9 +30,9 @@ StaffMember[] staffList;
         staffList[5] = new Volunteer ("Cliff", "321 Duds Lane",
         "555-7282");
         staffList[6] = new Commission ("Marshal", "106th Ozone Park Avenue.",
-        "555-1912", "1-800-273-8255", 6.25, 20);
+        "555-1912", "1-800-273-8255", 6.25, 0.20);
         staffList[7] = new Commission ("Noddle", "QC H3Z Westmount.",
-        "555-0303", "842-3089-087-878", 9.75, 15);
+        "555-0303", "842-3089-087-878", 9.75, 0.15);
         ((Executive)staffList[0]).awardBonus (500.00);
         ((Hourly)staffList[3]).addHours (40);
         ((Commission)staffList[6]).addHours (35);

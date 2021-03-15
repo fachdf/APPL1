@@ -29,7 +29,9 @@ public class Commission extends Hourly {
     public double pay(){
         totalSales = totalSales*commissionRate;
         totalSales = totalSales + super.pay(); 
-        return totalSales;
+        double myPay = totalSales;
+        totalSales = 0;
+        return myPay;
     }
     @Override
     public String toString(){
