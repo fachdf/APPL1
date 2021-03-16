@@ -80,6 +80,16 @@ public class IntegerListTest
                 else
                 System.out.println("Old value isn't in the list, no change were made.");
                 break;
+            case 7:
+                list.sortDecreasing();
+                break;
+            case 8:
+                System.out.print("Enter the value to look for: ");
+                loc = list.binarySearchD(scan.nextInt());
+                if (loc != -1)
+                System.out.println("Found at location " + loc);
+                else
+                System.out.println("Not in list");
             default:
                 System.out.println("Sorry, invalid choice");
         }
@@ -93,11 +103,13 @@ public class IntegerListTest
         System.out.println(" ====");
         System.out.println("0: Quit");
         System.out.println("1: Create a new list (** do this first!! **)");
-        System.out.println("2: Sort the list using selection sort");
+        System.out.println("2: Sort the list using selection sort (Ascending)");
         System.out.println("3: Find an element in the list using linear search");
         System.out.println("4: Print the list");
         System.out.println("5: Change an element into a new value");
         System.out.println("6: Change all specific element into a new value");
+        System.out.println("7: Sort the list using selection sort (Descending)");
+        System.out.println("8: Find an element in the list using binary search (**Need to be in Descending order!**)");
         System.out.print("\nEnter your choice: ");
     }
 } 

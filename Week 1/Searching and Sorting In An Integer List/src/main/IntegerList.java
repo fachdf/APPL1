@@ -84,4 +84,42 @@ public class IntegerList
             location = search(oldVal);
         }
     }
+    //-------------------------------------------------------
+    //sorts the list into decreasing (instead of increasing)
+    //-------------------------------------------------------
+    void sortDecreasing(){
+       int minIndex;
+       for (int i=0; i < list.length-1; i++)
+       {
+           //find smallest element in list starting at location i
+           minIndex = i;
+           for (int j = i+1; j < list.length; j++)
+           if (list[j] > list[minIndex])
+           minIndex = j;
+           //swap list[i] with smallest element
+           int temp = list[i]; 
+           list[i] = list[minIndex];
+           list[minIndex] = temp;
+       }
+    }
+    //-------------------------------------------------------
+    //uses a binary search to find the target assuming the list is sorted in decreasing order.
+    //(Pakai algo bin. search yang sebelumnya).
+    //-------------------------------------------------------
+    int binarySearchD (int target){
+        int left = 0;
+        int right = list.length - 1;
+
+        while (left <= right) {
+             int mid = left + (right - left)/2;   
+            if (list[mid] < target) {
+                right = mid - 1;
+            } else if (list[mid] > target) {
+                left  = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
 }  
