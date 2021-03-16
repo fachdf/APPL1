@@ -56,6 +56,18 @@ public class IntegerListTest
             case 4:
                 list.print();
                 break;
+            case 5:
+                System.out.print("Enter the value to be repaced: ");
+                int oldVal = scan.nextInt();
+                System.out.print("Enter the new value: ");
+                int newVal = scan.nextInt();
+                loc = list.search(oldVal);
+                list.replaceFirst(oldVal, newVal);
+                if (loc != -1)
+                System.out.println("Success!");
+                else
+                System.out.println("Old value isn't in the list, no change were made.");
+                break;
             default:
                 System.out.println("Sorry, invalid choice");
         }
@@ -72,6 +84,7 @@ public class IntegerListTest
         System.out.println("2: Sort the list using selection sort");
         System.out.println("3: Find an element in the list using linear search");
         System.out.println("4: Print the list");
+        System.out.println("5: Change an element into a new value");
         System.out.print("\nEnter your choice: ");
     }
 } 
