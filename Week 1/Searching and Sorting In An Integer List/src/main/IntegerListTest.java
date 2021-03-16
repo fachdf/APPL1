@@ -30,7 +30,7 @@ public class IntegerListTest
     //-------------------------------------------------------
     public static void dispatch(int choice)
     {
-        int loc;
+        int loc, oldVal, newVal;
         switch(choice)
         {
             case 0:
@@ -58,11 +58,23 @@ public class IntegerListTest
                 break;
             case 5:
                 System.out.print("Enter the value to be repaced: ");
-                int oldVal = scan.nextInt();
+                oldVal = scan.nextInt();
                 System.out.print("Enter the new value: ");
-                int newVal = scan.nextInt();
+                newVal = scan.nextInt();
                 loc = list.search(oldVal);
                 list.replaceFirst(oldVal, newVal);
+                if (loc != -1)
+                System.out.println("Success!");
+                else
+                System.out.println("Old value isn't in the list, no change were made.");
+                break;
+            case 6:
+                System.out.print("Enter the value to be repaced: ");
+                oldVal = scan.nextInt();
+                System.out.print("Enter the new value: ");
+                newVal = scan.nextInt();
+                loc = list.search(oldVal);
+                list.replaceAll(oldVal, newVal);
                 if (loc != -1)
                 System.out.println("Success!");
                 else
@@ -85,6 +97,7 @@ public class IntegerListTest
         System.out.println("3: Find an element in the list using linear search");
         System.out.println("4: Print the list");
         System.out.println("5: Change an element into a new value");
+        System.out.println("6: Change all specific element into a new value");
         System.out.print("\nEnter your choice: ");
     }
 } 

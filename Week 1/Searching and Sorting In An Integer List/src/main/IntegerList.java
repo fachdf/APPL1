@@ -74,4 +74,14 @@ public class IntegerList
             list[location] = newVal;
         }
     }
+    //-------------------------------------------------------
+    //change an old value to a new value, nothing happens if the old value is isnt in the list
+    //-------------------------------------------------------
+    void replaceAll(int oldVal, int newVal){
+        int location = search(oldVal);
+        while(location != -1){
+            list[location] = newVal;
+            location = search(oldVal);
+        }
+    }
 }  
