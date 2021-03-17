@@ -106,7 +106,7 @@ public class IntegerList
     //uses a binary search to find the target assuming the list is sorted in decreasing order.
     //(Pakai algo bin. search yang sebelumnya).
     //-------------------------------------------------------
-    int binarySearchD (int target){
+    int binarySearch (int target){
         int left = 0;
         int right = list.length - 1;
 
