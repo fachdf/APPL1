@@ -60,7 +60,7 @@ public class IntegerListTest{
                 break;
 
             case 5:
-                val = 10;
+                val = 10; // Ready state item
                 System.out.print("Value to look for: " + val);
                 time1 = System.currentTimeMillis();
                 loc = list.linearSearch(val);
