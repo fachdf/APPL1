@@ -13,6 +13,7 @@ public class CirclePanel extends JPanel
     private final int CIRCLE_SIZE = 50;
     private int x,y;
     private Color c;
+    JButton chooseColor = new JButton("Choose Color");
     //---------------------------------------------------------------
     // Set up circle and buttons to move it.
     //---------------------------------------------------------------
@@ -34,6 +35,7 @@ public class CirclePanel extends JPanel
         JButton green = new JButton("Green");
         JButton blue = new JButton("Blue");
         
+        
         // Add listeners to the buttons
         left.addActionListener(new MoveListener(-20,0));
         right.addActionListener(new MoveListener(20,0));
@@ -44,6 +46,7 @@ public class CirclePanel extends JPanel
         red.addActionListener(new ColorListener(Color.red));
         green.addActionListener(new ColorListener(Color.green));
         blue.addActionListener(new ColorListener(Color.blue));
+        chooseColor.addActionListener(new ColorListener(null));
         
         // Need a panel to put the buttons on or they'll be on
         // top of each other.
@@ -63,7 +66,7 @@ public class CirclePanel extends JPanel
         buttonPanel2.add(red);
         buttonPanel2.add(green);
         buttonPanel2.add(blue);
-        
+        buttonPanel2.add(chooseColor);
         //Set button background & foreground
         red.setBackground(Color.red);
         green.setBackground(Color.green);
@@ -76,6 +79,7 @@ public class CirclePanel extends JPanel
         //---------------------------------------------------------------
         // Draw circle on CirclePanel
         //---------------------------------------------------------------
+    @Override
     public void paintComponent(Graphics page)
     { 
         super.paintComponent(page);
@@ -100,6 +104,7 @@ public class CirclePanel extends JPanel
         //---------------------------------------------------------------
         // Change x and y coordinates and repaint.
         //---------------------------------------------------------------
+        @Override
         public void actionPerformed(ActionEvent e)
         {
             x += dx;
@@ -116,13 +121,16 @@ public class CirclePanel extends JPanel
             this.c1 = c1;
         }
         //---------------------------------------------------------------
-        // Change x and y coordinates and repaint.
+        // repaint the circle.
         //---------------------------------------------------------------
         public void actionPerformed(ActionEvent e)
         {
+            if(c1 == null){
+                c1 = JColorChooser.showDialog(chooseColor, "Choose Color", c1);
+            }
             c = c1;
             repaint();
-//           page.fillOval(x,y,CIRCLE_SIZE,CIRCLE_SIZE);
+
         }
     }
 } 
