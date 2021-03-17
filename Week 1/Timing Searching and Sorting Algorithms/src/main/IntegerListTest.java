@@ -60,33 +60,44 @@ public class IntegerListTest{
                 break;
 
             case 5:
-                System.out.print("Enter the value to look for: ");
-                val = scan.nextInt();
+                val = 10;
+                System.out.print("Value to look for: " + val);
+                time1 = System.currentTimeMillis();
                 loc = list.linearSearch(val);
+                time2 = System.currentTimeMillis();
                 if (loc != -1)
                     System.out.println("Found at location " + loc);
                 else
                     System.out.println("Not in list");
+                System.out.println("Time needed by linear search: "+ (time2-time1)); 
                 break;
-
             case 6:
                 System.out.print("Enter the value to look for: ");
                 val = scan.nextInt();
+                time1 = System.currentTimeMillis();
                 loc = list.binarySearch(val);
+                time2 = System.currentTimeMillis();
                 if (loc != -1)
                     System.out.println("Found at location " + loc);
                 else
                     System.out.println("Not in list");
+                System.out.println("Time needed by binary search: "+ (time2-time1));
                 break;
 
             case 7:
+                time1 = System.currentTimeMillis();
                 list.selectionSort();
-                System.out.println("List has been sorted.");
+                time2 = System.currentTimeMillis();
+                System.out.println("List has been sorted by selection sort.");
+                System.out.println("Time needed by selection sort: "+ (time2-time1));
                 break;
 
             case 8:
+                time1 = System.currentTimeMillis();
                 list.insertionSort();
-                System.out.println("List has been sorted.");
+                time2 = System.currentTimeMillis();
+                System.out.println("List has been sorted by insertion sort.");
+                System.out.println("Time needed by insertion sort: "+ (time2-time1));
                 break;
 
             default:
