@@ -20,6 +20,9 @@ public class CountLetters
         //convert to all upper case
         word = word.toUpperCase();
         //count frequency of each letter in string
+        
+        /* Try catch so only letters would be counted and no error
+        will happen */ 
         try{
             for (int i=0; i < word.length(); i++){
                 counts[word.charAt(i)-'A']++;
